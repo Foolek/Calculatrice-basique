@@ -1,4 +1,4 @@
-import javax.swing.*;
+import static javax.swing.SwingUtilities.invokeLater;
 
 public class Main {
 	public static void main(String[] args) {
@@ -6,12 +6,6 @@ public class Main {
 	}
 
 	private static void run(){
-		SwingUtilities.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-				new Fenetre().setVisible(true);
-			}
-		});
+		invokeLater(() -> new Fenetre().setVisible(true));
 	}
-
 }
